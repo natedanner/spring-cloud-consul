@@ -45,7 +45,7 @@ public class ConsulInboundMessageProducer extends MessageProducerSupport {
 
 	private final Runnable eventsRunnable;
 
-	private EventService eventService;
+	private final EventService eventService;
 
 	private ScheduledFuture<?> eventsHandle;
 

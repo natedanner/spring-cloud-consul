@@ -101,7 +101,7 @@ public class ConsulConfigDataLocationResolver implements ConfigDataLocationResol
 
 		ConsulPropertySources consulPropertySources = new ConsulPropertySources(properties, log);
 
-		List<Context> contexts = (locationUri == null || CollectionUtils.isEmpty(locationUri.getPathSegments()))
+		List<Context> contexts = locationUri == null || CollectionUtils.isEmpty(locationUri.getPathSegments())
 				? consulPropertySources.generateAutomaticContexts(profiles.getAccepted(), false)
 				: getCustomContexts(locationUri, properties);
 

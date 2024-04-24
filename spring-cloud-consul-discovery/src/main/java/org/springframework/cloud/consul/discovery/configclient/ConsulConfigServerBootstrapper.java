@@ -88,7 +88,7 @@ public class ConsulConfigServerBootstrapper implements BootstrapRegistryInitiali
 
 		registry.registerIfAbsent(ConfigServerInstanceProvider.Function.class, context -> {
 			if (!isDiscoveryEnabled(context)) {
-				return (id) -> Collections.emptyList();
+				return id -> Collections.emptyList();
 			}
 			ConsulDiscoveryClient discoveryClient = context.get(ConsulDiscoveryClient.class);
 			return discoveryClient::getInstances;

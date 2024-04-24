@@ -48,7 +48,7 @@ public class ConsulPropertySource extends EnumerablePropertySource<ConsulClient>
 
 	private String context;
 
-	private ConsulConfigProperties configProperties;
+	private final ConsulConfigProperties configProperties;
 
 	private Long initialIndex;
 

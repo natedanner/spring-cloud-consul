@@ -32,9 +32,9 @@ import org.springframework.boot.actuate.health.Health;
  */
 public class ConsulHealthIndicator extends AbstractHealthIndicator {
 
-	private ConsulClient consul;
+	private final ConsulClient consul;
 
-	private ConsulHealthIndicatorProperties properties;
+	private final ConsulHealthIndicatorProperties properties;
 
 	public ConsulHealthIndicator(ConsulClient consul, ConsulHealthIndicatorProperties properties) {
 		this.consul = consul;

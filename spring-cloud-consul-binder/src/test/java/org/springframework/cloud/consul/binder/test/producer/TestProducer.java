@@ -93,7 +93,7 @@ public class TestProducer implements ApplicationRunner {
 
 	public static class StubPartitionSelectorStrategy implements PartitionSelectorStrategy {
 
-		public volatile boolean invoked = false;
+		public volatile boolean invoked;
 
 		@Override
 		public int selectPartition(Object key, int partitionCount) {

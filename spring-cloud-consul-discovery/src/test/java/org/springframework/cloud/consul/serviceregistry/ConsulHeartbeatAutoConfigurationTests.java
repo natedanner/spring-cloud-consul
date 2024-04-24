@@ -37,7 +37,7 @@ import static org.mockito.Mockito.mock;
  */
 class ConsulHeartbeatAutoConfigurationTests {
 
-	private ApplicationContextRunner appContextRunner = new ApplicationContextRunner()
+	private final ApplicationContextRunner appContextRunner = new ApplicationContextRunner()
 			.withConfiguration(AutoConfigurations.of(ConsulHeartbeatAutoConfiguration.class))
 			.withBean(ConsulClient.class, () -> mock(ConsulClient.class))
 			.withBean(HealthEndpoint.class, () -> mock(HealthEndpoint.class))

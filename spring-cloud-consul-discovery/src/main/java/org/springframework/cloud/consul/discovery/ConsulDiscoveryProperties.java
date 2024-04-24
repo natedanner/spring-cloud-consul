@@ -115,10 +115,10 @@ public class ConsulDiscoveryProperties {
 	private Lifecycle lifecycle = new Lifecycle();
 
 	/** Use ip address rather than hostname during registration. */
-	private boolean preferIpAddress = false;
+	private boolean preferIpAddress;
 
 	/** Source of how we will determine the address to use. */
-	private boolean preferAgentAddress = false;
+	private boolean preferAgentAddress;
 
 	/** The delay between calls to watch consul catalog in millis, default is 1000. */
 	private int catalogServicesWatchDelay = 1000;
@@ -141,7 +141,7 @@ public class ConsulDiscoveryProperties {
 	/**
 	 * Whether hostname is included into the default instance id when registering service.
 	 */
-	private boolean includeHostnameInInstanceId = false;
+	private boolean includeHostnameInInstanceId;
 
 	/**
 	 * Consistency mode for health service request.
@@ -183,7 +183,7 @@ public class ConsulDiscoveryProperties {
 	 * Add the 'passing` parameter to /v1/health/service/serviceName. This pushes health
 	 * check passing to the server.
 	 */
-	private boolean queryPassing = false;
+	private boolean queryPassing;
 
 	/** Register as a service in consul. */
 	private boolean register = true;
@@ -210,7 +210,7 @@ public class ConsulDiscoveryProperties {
 	 * Order of the discovery client used by `CompositeDiscoveryClient` for sorting
 	 * available clients.
 	 */
-	private int order = 0;
+	private int order;
 
 	@SuppressWarnings("unused")
 	private ConsulDiscoveryProperties() {

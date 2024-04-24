@@ -53,7 +53,7 @@ public class TestConsumer implements ApplicationRunner {
 	/**
 	 * Flag that indicates if the consumer has been bound.
 	 */
-	private volatile boolean isBound = false;
+	private volatile boolean isBound;
 
 	/**
 	 * Payload of last received message.

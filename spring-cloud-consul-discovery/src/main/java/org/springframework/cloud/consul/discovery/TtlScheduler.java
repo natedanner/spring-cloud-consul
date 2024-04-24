@@ -59,7 +59,7 @@ public class TtlScheduler {
 
 	private final Map<String, NewService> registeredServices = new ConcurrentHashMap<>();
 
-	private ApplicationStatusProvider applicationStatusProvider;
+	private final ApplicationStatusProvider applicationStatusProvider;
 
 	public TtlScheduler(HeartbeatProperties heartbeatProperties, ConsulDiscoveryProperties discoveryProperties,
 			ConsulClient client, ReregistrationPredicate reregistrationPredicate,

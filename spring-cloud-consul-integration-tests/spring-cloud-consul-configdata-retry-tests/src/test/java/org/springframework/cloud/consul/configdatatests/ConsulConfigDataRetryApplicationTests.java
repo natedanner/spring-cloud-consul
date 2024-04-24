@@ -47,7 +47,7 @@ public class ConsulConfigDataRetryApplicationTests {
 	@BeforeAll
 	public static void setup() {
 		context = new SpringApplicationBuilder(ConsulConfigDataRetryApplication.class)
-				.addBootstrapRegistryInitializer(registry -> {
+				.addBootstrapRegistryInitializer(registry ->
 					registry.register(ConsulBootstrapper.LoaderInterceptor.class, context -> {
 						RetryTemplate retryTemplate = context.get(RetryTemplate.class);
 						if (retryTemplate != null) {
@@ -59,8 +59,7 @@ public class ConsulConfigDataRetryApplicationTests {
 						}
 						// disabled
 						return null;
-					});
-				}).run("--spring.application.name=" + APP_NAME, "--spring.cloud.consul.retry.enabled=true",
+					})).run("--spring.application.name=" + APP_NAME, "--spring.cloud.consul.retry.enabled=true",
 						"--spring.cloud.consul.retry.max-attempts=2",
 						// non-existent consul host and port
 						"--spring.config.import=optional:consul:somehost:1234",

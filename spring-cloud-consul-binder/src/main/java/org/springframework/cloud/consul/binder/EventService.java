@@ -41,7 +41,7 @@ public class EventService {
 
 	protected ObjectMapper objectMapper = new ObjectMapper();
 
-	private AtomicReference<Long> lastIndex = new AtomicReference<>();
+	private final AtomicReference<Long> lastIndex = new AtomicReference<>();
 
 	public EventService(ConsulBinderProperties properties, ConsulClient consul, ObjectMapper objectMapper) {
 		this.properties = properties;

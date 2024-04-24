@@ -42,7 +42,7 @@ public class HeartbeatProperties {
 
 	// TODO: change enabled to default to true when I stop seeing messages like
 	// [WARN] agent: Check 'service:testConsulApp:xtest:8080' missed TTL, is now critical
-	boolean enabled = false;
+	boolean enabled;
 
 	@DurationUnit(ChronoUnit.SECONDS)
 	private Duration ttl = Duration.ofSeconds(30);
@@ -51,7 +51,7 @@ public class HeartbeatProperties {
 	@DecimalMax("0.9")
 	private double intervalRatio = 2.0 / 3.0;
 
-	private boolean reregisterServiceOnFailure = false;
+	private boolean reregisterServiceOnFailure;
 
 	/**
 	 * Whether or not to take the current system health (as reported via the Actuator

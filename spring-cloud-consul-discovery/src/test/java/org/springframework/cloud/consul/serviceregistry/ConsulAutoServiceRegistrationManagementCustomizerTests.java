@@ -72,16 +72,14 @@ public class ConsulAutoServiceRegistrationManagementCustomizerTests {
 
 		@Bean
 		public ConsulManagementRegistrationCustomizer fooManagementCustomizer() {
-			return managementRegistration -> {
+			return managementRegistration ->
 				addCheck(managementRegistration, "39s");
-			};
 		}
 
 		@Bean
 		public ConsulManagementRegistrationCustomizer barManagementCustomizer() {
-			return managementRegistration -> {
+			return managementRegistration ->
 				addCheck(managementRegistration, "36s");
-			};
 		}
 
 		private void addCheck(ConsulRegistration managementRegistration, String ttl) {

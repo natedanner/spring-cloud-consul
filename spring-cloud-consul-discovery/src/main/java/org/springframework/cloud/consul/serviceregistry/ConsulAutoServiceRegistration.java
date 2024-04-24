@@ -32,11 +32,11 @@ import org.springframework.util.ObjectUtils;
  */
 public class ConsulAutoServiceRegistration extends AbstractAutoServiceRegistration<ConsulRegistration> {
 
-	private static Log log = LogFactory.getLog(ConsulAutoServiceRegistration.class);
+	private static final Log log = LogFactory.getLog(ConsulAutoServiceRegistration.class);
 
-	private ConsulDiscoveryProperties properties;
+	private final ConsulDiscoveryProperties properties;
 
-	private ConsulAutoRegistration registration;
+	private final ConsulAutoRegistration registration;
 
 	public ConsulAutoServiceRegistration(ConsulServiceRegistry serviceRegistry,
 			AutoServiceRegistrationProperties autoServiceRegistrationProperties, ConsulDiscoveryProperties properties,

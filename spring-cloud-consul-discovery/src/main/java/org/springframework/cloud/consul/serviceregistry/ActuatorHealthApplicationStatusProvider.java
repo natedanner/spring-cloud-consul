@@ -37,9 +37,9 @@ import static org.springframework.boot.actuate.health.Status.UP;
  */
 public class ActuatorHealthApplicationStatusProvider implements ApplicationStatusProvider {
 
-	private HealthEndpoint healthEndpoint;
+	private final HealthEndpoint healthEndpoint;
 
-	private HeartbeatProperties heartbeatProperties;
+	private final HeartbeatProperties heartbeatProperties;
 
 	public ActuatorHealthApplicationStatusProvider(HealthEndpoint healthEndpoint,
 			HeartbeatProperties heartbeatProperties) {

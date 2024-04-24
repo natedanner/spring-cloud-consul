@@ -179,7 +179,7 @@ public class ConsulAutoRegistration extends ConsulRegistration {
 			if (Character.isLetterOrDigit(curr)) {
 				toAppend = curr;
 			}
-			else if (prev == null || !(prev == SEPARATOR)) {
+			else if (prev == null || prev != SEPARATOR) {
 				toAppend = SEPARATOR;
 			}
 			if (toAppend != null) {
@@ -207,7 +207,7 @@ public class ConsulAutoRegistration extends ConsulRegistration {
 
 		// store the secure flag in the tags so that clients will be able to figure
 		// out whether to use http or https automatically
-		metadata.put("secure", Boolean.toString(properties.getScheme().equalsIgnoreCase("https")));
+		metadata.put("secure", Boolean.toString("https".equalsIgnoreCase(properties.getScheme())));
 
 		return metadata;
 	}

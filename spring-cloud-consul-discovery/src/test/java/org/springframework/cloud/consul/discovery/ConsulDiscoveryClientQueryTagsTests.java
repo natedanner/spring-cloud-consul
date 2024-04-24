@@ -52,7 +52,7 @@ class ConsulDiscoveryClientQueryTagsTests {
 	static NewService PROD_WEST_SERVICE = serviceForEnvironmentAndRegion("prod", "us-west", 9082);
 	static NewService PROD_EAST_SERVICE = serviceForEnvironmentAndRegion("prod", "us-east", 9082);
 
-	private ApplicationContextRunner appContextRunner = new ApplicationContextRunner()
+	private final ApplicationContextRunner appContextRunner = new ApplicationContextRunner()
 			.withInitializer(new ConsulTestcontainers()).withConfiguration(AutoConfigurations.of(TestConfig.class))
 			.withPropertyValues("spring.application.name=consulServiceQueryTags",
 					"spring.cloud.consul.discovery.catalogServicesWatch.enabled=false");
@@ -94,7 +94,7 @@ class ConsulDiscoveryClientQueryTagsTests {
 	@Test
 	void multipleConflictingMatchingTagsSpecifiedOnDefaultQueryTagsProperty() {
 		appContextRunner.withPropertyValues("spring.cloud.consul.discovery.default-query-tag=prod,qa")
-				.run(context -> assertThatGetInstancesReturnsExpectedServices(context));
+				.run(this::assertThatGetInstancesReturnsExpectedServices);
 	}
 
 	@Test

@@ -29,7 +29,7 @@ import org.springframework.util.StringUtils;
  */
 public class ConsulServletRegistrationCustomizer implements ConsulRegistrationCustomizer {
 
-	private ObjectProvider<ServletContext> servletContext;
+	private final ObjectProvider<ServletContext> servletContext;
 
 	public ConsulServletRegistrationCustomizer(ObjectProvider<ServletContext> servletContext) {
 		this.servletContext = servletContext;

@@ -34,7 +34,7 @@ import static org.junit.Assert.fail;
  */
 public class ConsulDiscoveryClientConfigurationTests {
 
-	private AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+	private final AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 
 	@AfterEach
 	public void after() {

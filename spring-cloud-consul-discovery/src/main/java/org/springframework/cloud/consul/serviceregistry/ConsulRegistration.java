@@ -32,7 +32,7 @@ public class ConsulRegistration implements Registration {
 
 	private final NewService service;
 
-	private ConsulDiscoveryProperties properties;
+	private final ConsulDiscoveryProperties properties;
 
 	public ConsulRegistration(NewService service, ConsulDiscoveryProperties properties) {
 		this.service = service;
@@ -67,7 +67,7 @@ public class ConsulRegistration implements Registration {
 
 	@Override
 	public boolean isSecure() {
-		return this.properties.getScheme().equalsIgnoreCase("https");
+		return "https".equalsIgnoreCase(this.properties.getScheme());
 	}
 
 	@Override

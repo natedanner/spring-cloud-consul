@@ -51,10 +51,7 @@ public class ConsulConfigDataMissingEnvironmentPostProcessor extends ConfigDataM
 				true);
 		boolean importCheckEnabled = environment.getProperty(ConsulConfigProperties.PREFIX + ".import-check.enabled",
 				Boolean.class, true);
-		if (!coreEnabled || !configEnabled || !importCheckEnabled) {
-			return false;
-		}
-		return true;
+		return !(!coreEnabled || !configEnabled || !importCheckEnabled);
 	}
 
 	@Override

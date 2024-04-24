@@ -42,7 +42,7 @@ import static org.springframework.boot.actuate.health.Status.UP;
  */
 public class ConsulServiceRegistry implements ServiceRegistry<ConsulRegistration> {
 
-	private static Log log = LogFactory.getLog(ConsulServiceRegistry.class);
+	private static final Log log = LogFactory.getLog(ConsulServiceRegistry.class);
 
 	private final ConsulClient client;
 
@@ -119,7 +119,7 @@ public class ConsulServiceRegistry implements ServiceRegistry<ConsulRegistration
 
 		for (Check check : checks) {
 			if (check.getServiceId().equals(registration.getInstanceId())) {
-				if (check.getName().equalsIgnoreCase("Service Maintenance Mode")) {
+				if ("Service Maintenance Mode".equalsIgnoreCase(check.getName())) {
 					return OUT_OF_SERVICE.getCode();
 				}
 			}

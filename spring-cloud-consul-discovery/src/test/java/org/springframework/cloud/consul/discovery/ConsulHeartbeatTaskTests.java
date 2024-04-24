@@ -48,7 +48,7 @@ import static org.mockito.Mockito.verify;
  */
 public class ConsulHeartbeatTaskTests {
 
-	private String serviceId = "service-A";
+	private final String serviceId = "service-A";
 
 	private HeartbeatProperties heartbeatProperties;
 

@@ -92,9 +92,6 @@ public class ConsulServiceRegistryTests {
 			this.serviceRegistry.setStatus(registration, "UP");
 			assertHasInstance(serviceId);
 		}
-		catch (RuntimeException e) {
-			throw e;
-		}
 		finally {
 			this.serviceRegistry.deregister(registration);
 			if (t == null) { // just deregister, test already failed
